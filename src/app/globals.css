@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --default-font: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 61, 60, 59;
+  --background-end-rgb: 61, 60, 59;
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 61, 60, 59;
+    --background-end-rgb: 61, 60, 59;
+  }
+}
+
+
+html {
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--default-font);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.bg-color1 { background-color: #384650 }
+
+.bg-color2 { background-color: #38688d }
+
+.bg-color3 { background-color: #3d3c3b }
+
+.bg-color4 { background-color: #949e79 }
+
+.bg-color5 { background-color: #d1e29a }
+
+.txt-color1 { color: #384650 }
+
+.txt-color2 { color: #326b97 }
+
+.txt-color3 { color: #3d3c3b }
+
+.txt-color4 { color: #949e79 }
+
+.txt-color5 { color: #d1e29a }

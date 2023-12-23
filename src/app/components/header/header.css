@@ -1,0 +1,101 @@
+/* Estilos Base */
+.header {
+  margin: 0px 0px;
+  justify-content: center;
+  border-radius: 0 0 0 0.5rem;
+  position: fixed;
+  padding: 0.5rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.navigation {
+  position: relative;
+}
+
+.menu-icon {
+  max-width: 40px;
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (min-width: 2500px) {
+  .header nav ul {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
+  .header-container {
+    justify-content: center;
+  }
+  .header {
+    border-radius: 0 0 0.5rem 0.5rem;
+    padding: 0px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .navigation-menu {
+    display: flex;
+    position: static;
+    background-color: transparent;
+  }
+
+  .navigation-menu a {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 2499px) {
+  .navigation-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #384650;
+    top: 0%;
+    right: 0;
+    width: 150px;
+    transition: opacity 0.1s ease, visibility 0.1s ease, transform 0.1s ease;
+    z-index: 10;
+  }
+
+  .header:hover .navigation-menu,
+  .menu-icon:hover + .navigation-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1501px) {
+}
+
+@media (min-width: 701px) and (max-width: 1500px) {
+}
+
+@media (min-width: 581px) and (max-width: 700px) {
+}
+
+@media (max-width: 580px) {
+}

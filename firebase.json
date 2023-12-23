@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "source": ".",
+    "site": "matiasarratibel",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-east1"
+    }
+  }
+}
