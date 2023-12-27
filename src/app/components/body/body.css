@@ -1,62 +1,85 @@
-.section { 
-    overflow-y: hidden;   
-    min-height: 100vh;
+.section {
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* rounded-0 object-cover rounded-full  */
 .pfp {
-    max-width: 400px;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 50%;
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hidden-section-l {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateX(-50%);
+  transition: all 0.5s ease-in-out;
+}
+
+.hidden-section-r {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(50%);
+    transition: all 0.5s ease-in-out;
+  }
+
+.show-section {
+  filter: blur(0px);
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hidden-section {
+    transition: none;
+  }
 }
 
 @media (min-width: 1501px) {
-    .section {
-        max-width: 1760px;
-    }
+  .section {
+    max-width: 1760px;
+  }
 }
 
 @media (min-width: 701px) and (max-width: 1500px) {
-    .section {
-        max-width: 1500px;
-    }
+  .section {
+    max-width: 1500px;
+  }
 }
 
 @media (min-width: 581px) and (max-width: 700px) {
-    .section {
-        padding: 0 7rem;
-    }
-
+  .section {
+    padding: 0 7rem;
+  }
 }
 
 @media (max-width: 580px) {
-    .section {
-        padding: 0 1rem;
-    }
-
+  .section {
+    padding: 0 1rem;
+  }
 }
 
 @media (min-width: 451px) and (max-width: 579px) {
-    .section {
-        padding: 0 0rem;
-    }
+  .section {
+    padding: 0 0rem;
+  }
 
-    .pfp {
-        max-width: 350px;
-        max-height: 350px;
-    }
+  .pfp {
+    max-width: 350px;
+    max-height: 350px;
+  }
 }
 
 /* media between 300 and 500  */
 @media (min-width: 300px) and (max-width: 450px) {
-    .section {
-        padding: 0 0rem;
-    }
+  .section {
+    padding: 0 0rem;
+  }
 
-    .pfp {
-        max-width: 200px;
-        max-height: 200px;
-    }
+  .pfp {
+    max-width: 200px;
+    max-height: 200px;
+  }
 }
-
