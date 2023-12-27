@@ -5,71 +5,67 @@
 :root {
   --default-font: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 61, 60, 59;
-  --background-end-rgb: 61, 60, 59;
+  --text-color: #000;
+  --color1: #3891d1;
+  --color2: #52a392;
+  --color3: #3d3c3b;
+  --color4: #5a6149;
+  --color5: #d1e29a;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 61, 60, 59;
-    --background-end-rgb: 61, 60, 59;
+    --text-color: #fff;
+    --color1: #3891d1;
+    --color2: #52a392;
+    --color3: #3d3c3b;
+    --color4: #5a6149;
+    --color5: #d1e29a;
   }
-} */
-
-html {
-  overflow-x: hidden;
-  text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--default-font);
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-color));
+  background: var(--color3);
 }
 
 .bg-color1 {
-  background-color: #384650;
+  background-color: var(--color1);
 }
 
 .bg-color2 {
-  background-color: #38688d;
+  background-color: var(--color2);
 }
 
 .bg-color3 {
-  background-color: #3d3c3b;
+  background-color: var(--color3);
 }
 
 .bg-color4 {
-  background-color: #949e79;
+  background-color: var(--color4);
 }
 
 .bg-color5 {
-  background-color: #d1e29a;
+  background-color: var(--color5);
 }
 
 .txt-color1 {
-  color: #384650;
+  color: var(--color1);
 }
 
 .txt-color2 {
-  color: #326b97;
+  color: var(--color2);
 }
 
 .txt-color3 {
-  color: #3d3c3b;
+  color: var(--color3);
 }
 
 .txt-color4 {
-  color: #949e79;
+  color: var(--color4);
 }
 
 .txt-color5 {
-  color: #d1e29a;
+  color: var(--color5);
 }
