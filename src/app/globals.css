@@ -3,69 +3,71 @@
 @tailwind utilities;
 
 :root {
-  --default-font: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --text-color: #000;
-  --color1: #3891d1;
-  --color2: #52a392;
-  --color3: #3d3c3b;
-  --color4: #5a6149;
-  --color5: #d1e29a;
+  --text-color: #333;  
+  --primary-color: #4394d1;  
+  --accent-color: #78cfc5;  
+  --background-color: #f0f0f0;  
+  --secondary-color: #b7c98e;  
+  --detail-color: #879663;  
+  --nav-menu-color: #94c062;  
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color: #fff;
-    --color1: #3891d1;
-    --color2: #52a392;
-    --color3: #3d3c3b;
-    --color4: #5a6149;
-    --color5: #d1e29a;
+    --text-color: #fff;  
+    --primary-color: #3891d1;  
+    --accent-color: #52a392;  
+    --background-color: #3d3c3b;  
+    --secondary-color: #5a6149;  
+    --detail-color: #d1e29a;
+    --nav-menu-color: #c7ff87;
   }
 }
 
 body {
-  font-family: var(--default-font);
-  color: rgb(var(--text-color));
-  background: var(--color3);
+  color: var(--text-color);
+  background: var(--background-color);
 }
 
-.bg-color1 {
-  background-color: var(--color1);
+ 
+.bg-primary {
+  background-color: var(--primary-color);
 }
 
-.bg-color2 {
-  background-color: var(--color2);
+.bg-accent {
+  background-color: var(--accent-color);
 }
 
-.bg-color3 {
-  background-color: var(--color3);
+.bg-secondary {
+  background-color: var(--secondary-color);
 }
 
-.bg-color4 {
-  background-color: var(--color4);
+.bg-detail {
+  background-color: var(--detail-color);
 }
 
-.bg-color5 {
-  background-color: var(--color5);
+.bg-nav-menu {
+  background-color: var(--nav-menu-color);
 }
 
-.txt-color1 {
-  color: var(--color1);
+ 
+.txt-primary {
+  color: var(--primary-color);
 }
 
-.txt-color2 {
-  color: var(--color2);
+.txt-accent {
+  color: var(--accent-color);
 }
 
-.txt-color3 {
-  color: var(--color3);
+.txt-secondary {
+  color: var(--secondary-color);
 }
 
-.txt-color4 {
-  color: var(--color4);
+.txt-detail {
+  color: var(--detail-color);
 }
 
-.txt-color5 {
-  color: var(--color5);
+.txt-nav-menu {
+  color: var(--nav-menu-color);
 }
+

@@ -36,8 +36,8 @@ export default function Home() {
 
         const observerOptions = {
             root: null,
-            rootMargin: '-5%',
-            threshold: 0.10
+            rootMargin: '-10%',
+            threshold: 0
         }
         
         const observerLR = createObserver('show-section-lr', observerOptions);
@@ -69,13 +69,13 @@ function HeroSection() {
         <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="pfp-container flex flex-column justify-center lg:justify-start w-full lg:w-1/2">
                 <div className='flex flex-col items-center font-extrabold px-5 mb-10 text-2xl sm:text-5xl lg:pr-20'>
-                    <img src="/pfp.jpeg" alt="Matias Arratibel" className="pfp" />
-                    <h1 className='txt-color5 '>Full<span className="txt-color4">-</span>Stack</h1>
+                    <img src="/images/pfp.jpeg" alt="Matias Arratibel" className="pfp" />
+                    <h1 className='txt-detail '>Full<span className="txt-secondary">-</span>Stack</h1>
                     <span>Developer</span>
                 </div>
             </div>
             <div className="intro-text w-full lg:w-1/2 px-5">
-                <h1 className="text-3xl sm:text-5xl font-extrabold txt-color5">
+                <h1 className="text-3xl sm:text-5xl font-extrabold txt-detail">
                     Diseñando Sistemas Intuitivos y Elegantes
                 </h1>
                 <p className="text-lg sm:text-xl font-normal pt-5 sm:pt-10">
@@ -95,7 +95,7 @@ function AboutMeSection() {
         <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen">
             <div className="w-full lg:w-1/2 px-5">
                 <div className="hidden-section-l">
-                    <h2 className="text-4xl sm:text-6xl font-extrabold txt-color5">Sobre mí</h2>
+                    <h2 className="text-4xl sm:text-6xl font-extrabold txt-detail">Sobre mí</h2>
                     <p className="text-lg sm:text-xl font-normal pt-5 sm:pt-10">
                         Desde pequeño, la tecnología capturó mi curiosidad,
                         iniciándose una pasión que me llevó al desarrollo
@@ -137,19 +137,19 @@ function ProjectsSection() {
     return (
         <section className="section py-20 flex justify-center items-center">
             <div className="container mx-auto">
-                <h2 className="hidden-section-t text-4xl sm:text-6xl font-extrabold text-center txt-color5">Proyectos Destacados</h2>
+                <h2 className="hidden-section-t text-4xl sm:text-6xl font-extrabold text-center txt-detail">Proyectos Destacados</h2>
 
                 <div className=" flex flex-col md:flex-row md:flex-wrap justify-center items-center pt-10">
                     {/* Proyecto TGOL.IO */}
                     <div className="hidden-section-l w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div className="project-card bg-color4 p-6 rounded-lg shadow-lg">
+                        <div className="project-card bg-secondary p-6 rounded-lg shadow-lg">
                             <h3 className="text-3xl font-bold mb-1">Atlas Dapp</h3>
                             <h4 className='text-md font-bold mb-3'>The Galaxy Of Lemuria</h4>
                             <p className="text-lg mb-3">
                                 Contribución al desarrollo de una Dapp para TGOL, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
                             </p>
                             <a href="https://www.tgol.io" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 transition duration-300">
-                                <button className="bg-color1 text-white font-bold py-2 px-4 rounded-md">
+                                <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
                                     Visitar sitio
                                 </button>
                             </a>
@@ -159,7 +159,7 @@ function ProjectsSection() {
 
                     {/* Proyecto Portafolio Personal */}
                     <div className="hidden-section-r w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div className="project-card bg-color4 p-6 rounded-lg shadow-lg">
+                        <div className="project-card bg-secondary p-6 rounded-lg shadow-lg">
                             <h3 className="text-3xl font-bold mb-1">Portafolio Matias Arratibel</h3>
                             <h4 className='text-md font-bold mb-3'>Proyecto Personal</h4>
                             <p className="text-lg mb-3">
@@ -167,12 +167,12 @@ function ProjectsSection() {
                             </p>
                             <div className='flex flex-row justify-start'>
                                 <a href="https://matiasarratibel.web.app" target="_blank" rel="noopener noreferrer" className='mr-5'>
-                                    <button className="bg-color1 text-white font-bold py-2 px-4 rounded-md">
+                                    <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
                                         Visitar sitio
                                     </button>
                                 </a>
                                 <a href="https://github.com/Kioys/portfolio" target="_blank" rel="noopener noreferrer">
-                                    <button className="bg-color1 text-white font-bold py-2 px-4 rounded-md">
+                                    <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
                                         Visitar repositorio
                                     </button>
                                 </a>
