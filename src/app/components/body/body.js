@@ -2,7 +2,9 @@
 import React, { useEffect } from 'react';
 import './body.css';
 
-export default function Home() {
+export default function Home(props) {
+
+    const { sectionRefs } = props;
 
     const createObserver = (newClassName, options) => {
 
@@ -24,6 +26,10 @@ export default function Home() {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add(newClassName);
+                    entry.target.addEventListener('transitionend', function callback() {
+                        entry.target.classList.remove('hidden-section-l', 'hidden-section-r');
+                        entry.target.removeEventListener('transitionend', callback);
+                    });
                     observer.unobserve(entry.target);
                 }
             });
@@ -57,20 +63,20 @@ export default function Home() {
 
     return (
         <div id="body" className="flex flex-col lg:px-24 items-center">
-            <HeroSection />
-            <AboutMeSection />
-            <ProjectsSection />
-            <SkillsSection />
-            <WorkExperienceSection />
-            <EducationSection />
-            <ContactSection />
+            <HeroSection sectionRef={sectionRefs.hero} />
+            <AboutMeSection sectionRef={sectionRefs.about} />
+            <ProjectsSection sectionRef={sectionRefs.projects} />
+            <SkillsSection sectionRef={sectionRefs.skills} />
+            <WorkExperienceSection sectionRef={sectionRefs.experience} />
+            <EducationSection sectionRef={sectionRefs.education} />
+            <ContactSection sectionRef={sectionRefs.contact} />
         </div>
     );
 };
 
-function HeroSection() {
+function HeroSection({ sectionRef }) {
     return (
-        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
+        <section ref={sectionRef} id="hero" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="pfp-container flex flex-column justify-center lg:justify-start w-full lg:w-1/2">
                 <div className='flex flex-col items-center font-extrabold px-5 mb-10 text-2xl sm:text-5xl lg:pr-20'>
                     <img src="/images/pfp.jpeg" alt="Matias Arratibel" className="pfp" />
@@ -94,9 +100,9 @@ function HeroSection() {
     );
 }
 
-function AboutMeSection() {
+function AboutMeSection({ sectionRef }) {
     return (
-        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen">
+        <section ref={sectionRef} id="about-me" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen">
             <div className="w-full lg:w-1/2 px-5">
                 <div className="hidden-section-l">
                     <h2 className="text-4xl sm:text-6xl font-extrabold txt-detail">Sobre mí</h2>
@@ -130,17 +136,17 @@ function AboutMeSection() {
                     </p>
                 </div>
             </div>
-            <div className="w-full lg:w-1/2 flex flex-col items-center pt-10 xl:pt-24">
-                <img src='/images/autoretrato.jpg' width={"400px"} className='rounded-xl'/>
+            <div className="hidden-section-r w-80 lg:w-1/2 flex flex-col items-center pt-10 xl:pt-24">
+                <img src='/images/autoretrato.jpg' width={"400px"} className='rounded-xl' />
                 <p className='font-light italic text-md'>Yo a los 17 años con mi perro Thor</p>
             </div>
         </section>
     );
 }
 
-function ProjectsSection() {
+function ProjectsSection({ sectionRef }) {
     return (
-        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
+        <section ref={sectionRef} id="projects" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="container mx-auto">
                 <h2 className="hidden-section-t text-4xl sm:text-6xl font-extrabold text-center txt-detail">Proyectos Destacados</h2>
                 <div className=" flex flex-col md:flex-row md:flex-wrap justify-center items-center pt-10">
@@ -186,9 +192,9 @@ function ProjectsSection() {
     );
 }
 
-function SkillsSection() {
+function SkillsSection({ sectionRef }) {
     return (
-        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
+        <section ref={sectionRef} id="skills" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
             <div className="container mx-auto">
                 <h2 className="hidden-section-r txt-detail text-4xl sm:text-6xl font-extrabold text-center">Habilidades Técnicas</h2>
                 <div className="flex flex-wrap justify-center text-center mt-10">
@@ -234,7 +240,7 @@ function SkillsSection() {
     );
 }
 
-function WorkExperienceSection() {
+function WorkExperienceSection({ sectionRef }) {
 
     function calculateDateDiff(from, end = new Date()) {
         const start = new Date(from);
@@ -249,7 +255,7 @@ function WorkExperienceSection() {
     }
 
     return (
-        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
+        <section ref={sectionRef} id="experience" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
             <div className="container mx-auto">
                 <h2 className="hidden-section-l text-4xl sm:text-6xl font-extrabold text-center txt-detail">Experiencia Profesional</h2>
                 <div className="hidden-section-r mt-10 ">
@@ -281,19 +287,19 @@ function WorkExperienceSection() {
     );
 }
 
-function EducationSection() {
+function EducationSection({ sectionRef }) {
     const sololearnCertificates = {
         HTML: "https://www.sololearn.com/certificates/CT-UFNCRYN1",
         CSS: "https://www.sololearn.com/certificates/CT-PO1YLILS",
         JavaScript: "https://www.sololearn.com/certificates/CT-WZAATVSV",
-        CSharp: "https://www.sololearn.com/certificates/CT-FMH334FS",
+        'C#': "https://www.sololearn.com/certificates/CT-FMH334FS",
         SQL: "https://www.sololearn.com/certificates/CT-AG31ZLYL",
         Java: "https://www.sololearn.com/certificates/CT-Y3ZFBU6O",
         Python: "https://www.sololearn.com/certificates/CC-4SSKKZT9"
     };
 
     return (
-        <section className="section flex flex-row items-center justify-center min-h-screen text-center">
+        <section ref={sectionRef} id="education" className="section flex flex-row items-center justify-center min-h-screen text-center">
             <div className="container mx-auto">
                 <h2 className="hidden-section-r text-4xl sm:text-6xl font-extrabold text-center mb-10 txt-detail">Educación y Certificaciones</h2>
                 <div className="hidden-section-l flex flex-wrap justify-center items-start pb-10">
@@ -325,14 +331,14 @@ function EducationSection() {
     );
 }
 
-function ContactSection() {
+function ContactSection({ sectionRef }) {
     // TODO: Make the form work, it needs to send an email to my email address
 
     return (
-        <section className="flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
+        <section ref={sectionRef} id="contact" className="flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="container auto px-10">
                 <p class="mb-4 text-4xl sm:text-6xl font-extrabold text-center txt-detail">Contactame</p>
-                <p class="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un mensaje directamente.</p>
+                <p class="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un correo directamente.</p>
                 <form action="#" class="space-y-8">
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium">Tu email</label>
