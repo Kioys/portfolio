@@ -1,5 +1,5 @@
 // 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './body.css';
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
             rootMargin: '-10%',
             threshold: 0
         }
-        
+
         const observerLR = createObserver('show-section-lr', observerOptions);
         const observerTB = createObserver('show-section-tb', observerOptions);
 
@@ -60,6 +60,10 @@ export default function Home() {
             <HeroSection />
             <AboutMeSection />
             <ProjectsSection />
+            <SkillsSection />
+            <WorkExperienceSection />
+            <EducationSection />
+            <ContactSection />
         </div>
     );
 };
@@ -126,8 +130,9 @@ function AboutMeSection() {
                     </p>
                 </div>
             </div>
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                {/* <!-- Aquí puedes incluir alguna imagen representativa o dejarlo para un diseño minimalista --> */}
+            <div className="w-full lg:w-1/2 flex flex-col items-center pt-10 xl:pt-24">
+                <img src='/images/autoretrato.jpg' width={"400px"} className='rounded-xl'/>
+                <p className='font-light italic text-md'>Yo a los 17 años con mi perro Thor</p>
             </div>
         </section>
     );
@@ -135,18 +140,16 @@ function AboutMeSection() {
 
 function ProjectsSection() {
     return (
-        <section className="section py-20 flex justify-center items-center">
+        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="container mx-auto">
                 <h2 className="hidden-section-t text-4xl sm:text-6xl font-extrabold text-center txt-detail">Proyectos Destacados</h2>
-
                 <div className=" flex flex-col md:flex-row md:flex-wrap justify-center items-center pt-10">
-                    {/* Proyecto TGOL.IO */}
                     <div className="hidden-section-l w-full md:w-1/2 lg:w-1/3 p-4">
                         <div className="project-card bg-secondary p-6 rounded-lg shadow-lg">
                             <h3 className="text-3xl font-bold mb-1">Atlas Dapp</h3>
-                            <h4 className='text-md font-bold mb-3'>The Galaxy Of Lemuria</h4>
+                            <h4 className='text-md font-bold mb-3'>The Galaxy Of Lemuria (TGOL)</h4>
                             <p className="text-lg mb-3">
-                                Contribución al desarrollo de una Dapp para TGOL, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
+                                Contribución al desarrollo de una Dapp para TGOL de Lemuria Online, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
                             </p>
                             <a href="https://www.tgol.io" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 transition duration-300">
                                 <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
@@ -156,8 +159,6 @@ function ProjectsSection() {
 
                         </div>
                     </div>
-
-                    {/* Proyecto Portafolio Personal */}
                     <div className="hidden-section-r w-full md:w-1/2 lg:w-1/3 p-4">
                         <div className="project-card bg-secondary p-6 rounded-lg shadow-lg">
                             <h3 className="text-3xl font-bold mb-1">Portafolio Matias Arratibel</h3>
@@ -180,6 +181,173 @@ function ProjectsSection() {
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+    );
+}
+
+function SkillsSection() {
+    return (
+        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
+            <div className="container mx-auto">
+                <h2 className="hidden-section-r txt-detail text-4xl sm:text-6xl font-extrabold text-center">Habilidades Técnicas</h2>
+                <div className="flex flex-wrap justify-center text-center mt-10">
+                    <div className="hidden-section-l w-full md:w-1/2 lg:w-1/3 p-4">
+                        <h3 className="txt-detail text-2xl font-bold mb-3">POO</h3>
+                        <p className="text-lg">
+                            Basta experiencia manejando lenguajes orientados a objetos, C#, Javascript, C++, Java.
+                        </p>
+                    </div>
+                    <div className="hidden-section-r w-full md:w-1/2 lg:w-1/3 p-4">
+                        <h3 className="txt-detail text-2xl font-bold mb-3">Desarrollo Web</h3>
+                        <p className="text-lg">
+                            Experiencia desarrollando aplicaciones web con React, Next.js, Tailwind CSS, HTML5, CSS3, JavaScript, Node.js, Express, MongoDB, Firebase, Git, GitHub, etc.
+                        </p>
+                    </div>
+                    <div className="hidden-section-l w-full md:w-1/2 lg:w-1/3 p-4">
+                        <h3 className="txt-detail text-2xl font-bold mb-3">React</h3>
+                        <p className="text-lg">
+                            Más de dos años de experiencia desarrollando aplicaciones robustas, incluyendo una Dapp para The Galaxy of Lemuria.
+                        </p>
+                    </div>
+                    <div className="hidden-section-r w-full md:w-1/2 lg:w-1/3 p-4">
+                        <h3 className="txt-detail text-2xl font-bold mb-3">JavaScript</h3>
+                        <p className="text-lg">
+                            Amplia experiencia en JavaScript, aplicado en varios proyectos web, incluyendo Node.js y frameworks frontend.
+                        </p>
+                    </div>
+                    <div className="hidden-section-l w-full md:w-1/2 lg:w-1/3 p-4">
+                        <h3 className="txt-detail text-2xl font-bold mb-3">Node.js</h3>
+                        <p className="text-lg">
+                            Experiencia en el desarrollo de back-end con Node.js, utilizando frameworks como <span className='txt-detail'>Express</span> y herramientas para la gestión de bases de datos y <span className='txt-detail'>APIs RESTful</span>.
+                        </p>
+                    </div>
+                    <div className="hidden-section-r w-full md:w-1/2 lg:w-1/3 p-4">
+                        <h3 className="txt-detail text-2xl font-bold mb-3">MongoDB</h3>
+                        <p className="text-lg">
+                            Experiencia manejando datos y creando estructuras de bases de datos no relacionales con MongoDB.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function WorkExperienceSection() {
+
+    function calculateDateDiff(from, end = new Date()) {
+        const start = new Date(from);
+        const now = new Date(end);
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        if (months < 0 || (months === 0 && now.getDate() < start.getDate())) {
+            years--;
+            months = 12 + months;
+        }
+        return `${start.getFullYear()}-${typeof end === "string" ? now.getFullYear() : "Actualidad"} (${years <= 0 ? "" : `${years} años ${months > 0 ? "y " : ""}`}${months <= 0 ? "" : `${months} meses`})`;
+    }
+
+    return (
+        <section className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center">
+            <div className="container mx-auto">
+                <h2 className="hidden-section-l text-4xl sm:text-6xl font-extrabold text-center txt-detail">Experiencia Profesional</h2>
+                <div className="hidden-section-r mt-10 ">
+                    <div className=" work-experience-card p-6 rounded-lg xl:px-40">
+                        <span className=' txt-detail'><h3 className="text-2xl font-bold ">Desarrollador Full-Stack - Lemuria Online SpA<p className="text-lg font-bold txt-primary">
+                            {calculateDateDiff('2021-11-01', '2022-02-01')}</p></h3></span>
+                        <p className="text-lg mt-3 text-left">
+                            En Lemuria Online SpA, trabajé como desarrollador full-stack, contribuyendo al desarrollo de una Dapp para The Galaxy of Lemuria, estuve a cargo de corregir y mejorar la interfaz de usuario en la pagina web y agregar funcionalidades basicas en el backend, desde la implementacion de la logica para el inicio de sesión hasta la recuperación de la cuenta del usuario.
+                        </p>
+                    </div>
+                </div>
+                <div className="hidden-section-l mt-10 ">
+                    <div className="work-experience-card p-6 rounded-lg xl:px-40">
+                        <span className='txt-detail'><h3 className="text-2xl font-bold ">Desarrollador Full-Stack - Lemuria Online SpA<p className="text-lg font-bold txt-primary">
+                            {calculateDateDiff('2022-05-31')}</p></h3></span>
+                        <p className="text-lg mt-3 text-left">
+                            Mi carrera profesional dio un giro significativo al unirme por segunda vez a Lemuria Online SpA como practica y luego como Ingeniero en Informática titulado, donde he trabajado como desarrollador full-stack. Esta oportunidad fue fundamental para profundizar en el desarrollo de aplicaciones descentralizadas, un área en crecimiento y de gran importancia en el sector tecnológico.
+                        </p>
+                        <p className="text-lg mt-3 text-left">
+                            A través de los desafíos y soluciones innovadoras, he adquirido experiencia valiosa en el desarrollo web desde conceptos básicos hasta aspectos avanzados, como el trabajo con blockchain. Los errores y los éxitos durante este tiempo han sido instructivos, proporcionando una base sólida para mi crecimiento continuo como desarrollador.
+                        </p>
+                        <p className="text-lg mt-3 text-left">
+                            En mi rol de desarrollador full-stack, mis responsabilidades en la empresa incluyen colaborar en el desarrollo de sistemas de software e integrar soluciones individuales en sistemas de nivel superior. Formulo especificaciones y prototipos básicos de programas, transformo diseños y especificaciones de software en código de alto rendimiento en el lenguaje correspondiente. Realizo pruebas unitarias y de integración, depuro y corrijo errores en el código, evalúo y propongo mejoras en el mismo. Colaboro con los miembros del equipo para establecer metas y objetivos, diseño y desarrollo interfaces de usuario, y escribo documentación técnica para referencia y reportes. Me mantengo actualizado con las nuevas tecnologías y tendencias en el desarrollo de software.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function EducationSection() {
+    const sololearnCertificates = {
+        HTML: "https://www.sololearn.com/certificates/CT-UFNCRYN1",
+        CSS: "https://www.sololearn.com/certificates/CT-PO1YLILS",
+        JavaScript: "https://www.sololearn.com/certificates/CT-WZAATVSV",
+        CSharp: "https://www.sololearn.com/certificates/CT-FMH334FS",
+        SQL: "https://www.sololearn.com/certificates/CT-AG31ZLYL",
+        Java: "https://www.sololearn.com/certificates/CT-Y3ZFBU6O",
+        Python: "https://www.sololearn.com/certificates/CC-4SSKKZT9"
+    };
+
+    return (
+        <section className="section flex flex-row items-center justify-center min-h-screen text-center">
+            <div className="container mx-auto">
+                <h2 className="hidden-section-r text-4xl sm:text-6xl font-extrabold text-center mb-10 txt-detail">Educación y Certificaciones</h2>
+                <div className="hidden-section-l flex flex-wrap justify-center items-start pb-10">
+                    <div className="px-6 xl:px-40">
+                        <div className="mb-8">
+                            <h3 className="text-2xl font-bold txt-detail">Ingeniería en Informática - IPCHILE</h3>
+                            <p className="text-lg font-bold txt-primary">2019 - 2022 (Distinción Máxima)</p>
+                            <p className="text-lg mt-3 text-left">
+                                Como graduado con honores en IPCHILE, establecí una fuerte base en ingeniería informática. Destacándome en el proyecto A+S, ejercí como Scrum Master, donde mi gestión y soporte al equipo fueron clave para superar obstáculos en el desarrollo de la aplicación móvil. Logramos no solo alcanzar nuestras metas académicas, sino también captar el interés de inversores, subrayando el potencial comercial de nuestro proyecto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h3 className="hidden-section-l text-2xl font-bold txt-detail">Certificaciones</h3>
+                <div className=" flex flex-row flex-wrap justify-center items-center xl:px-60">
+                    {Object.entries(sololearnCertificates).map(([key, value], index) => (
+                        <a key={value} href={value} target="_blank" rel="noopener noreferrer">
+                            <div className={`${index % 2 == 0 ? "hidden-section-r" : "hidden-section-l"} transform transition duration-200 hover:scale-110 select-none cursor-pointer`}>
+                                <div className="bg-secondary p-6 rounded-lg shadow-lg m-5 ">
+                                    <h3 className="text-3xl font-bold">{key}</h3>
+                                    <p className="text-sm font-bold">SoloLearn</p>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function ContactSection() {
+    // TODO: Make the form work, it needs to send an email to my email address
+
+    return (
+        <section className="flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
+            <div className="container auto px-10">
+                <p class="mb-4 text-4xl sm:text-6xl font-extrabold text-center txt-detail">Contactame</p>
+                <p class="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un mensaje directamente.</p>
+                <form action="#" class="space-y-8">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium">Tu email</label>
+                        <input type="email" id="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="ejemplo@gmail.com" required />
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium">Asunto</label>
+                        <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="Dime en qué te puedo ayudar" required />
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block mb-2 text-sm font-medium">Tu mensaje</label>
+                        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Deja tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary text-white font-bold py-2 px-4 rounded-md">Enviar mensaje</button>
+                </form>
             </div>
         </section>
     );
