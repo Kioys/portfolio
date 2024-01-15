@@ -3,6 +3,7 @@
 import React from "react";
 import Body from "./components/body/body";
 import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = React.useState('');
@@ -67,6 +68,7 @@ export default function Home() {
     <div className="font-sans">
       <Header currentSection={currentSection} linkRefs={linkRefs}/>
       <Body sectionRefs={sectionRefs} />
+      <Footer />
     </div>
   )
 }
