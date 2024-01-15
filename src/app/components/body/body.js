@@ -337,22 +337,22 @@ function ContactSection({ sectionRef }) {
     return (
         <section ref={sectionRef} id="contact" className="flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="container auto px-10">
-                <p class="mb-4 text-4xl sm:text-6xl font-extrabold text-center txt-detail">Contactame</p>
-                <p class="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un correo directamente.</p>
-                <form action="#" class="space-y-8">
+                <p className="mb-4 text-4xl sm:text-6xl font-extrabold text-center txt-detail">Contactame</p>
+                <p className="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un correo directamente.</p>
+                <form action="#" className="space-y-8">
                     <div>
-                        <label for="email" class="block mb-2 text-sm font-medium">Tu email</label>
-                        <input type="email" id="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="ejemplo@gmail.com" required />
+                        <label htmlFor="email" className="block mb-2 text-sm font-medium">Tu email</label>
+                        <input type="email" id="email" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="ejemplo@gmail.com" required />
                     </div>
                     <div>
-                        <label for="subject" class="block mb-2 text-sm font-medium">Asunto</label>
-                        <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="Dime en qué te puedo ayudar" required />
+                        <label htmlFor="subject" className="block mb-2 text-sm font-medium">Asunto</label>
+                        <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="Dime en qué te puedo ayudar" required />
                     </div>
-                    <div class="sm:col-span-2">
-                        <label for="message" class="block mb-2 text-sm font-medium">Tu mensaje</label>
-                        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Deja tu mensaje aquí..."></textarea>
+                    <div className="sm:col-span-2">
+                        <label htmlFor="message" className="block mb-2 text-sm font-medium">Tu mensaje</label>
+                        <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Deja tu mensaje aquí..."></textarea>
                     </div>
-                    <button type="submit" class="bg-primary text-white font-bold py-2 px-4 rounded-md">Enviar mensaje</button>
+                    <button type="submit" className="bg-primary text-white font-bold py-2 px-4 rounded-md">Enviar mensaje</button>
                 </form>
             </div>
         </section>
