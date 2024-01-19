@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './header.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 export default function Header({ currentSection, linkRefs }) {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const menuRef = React.useRef(null);
-    const iconRef = React.useRef(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef(null);
+    const iconRef = useRef(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         function handleClickOutside(event) {
             if (menuRef.current && !menuRef.current.contains(event.target) && !iconRef.current.contains(event.target)) {
                 setIsMenuOpen(false);
@@ -24,7 +24,7 @@ export default function Header({ currentSection, linkRefs }) {
         <section className="header-container" >
 
             <header className="header">
-                <nav className="text-center font-bold navigation select-none">
+                <nav className="text-center font-bold navigation select-none text-white">
                     <img ref={iconRef} src="/icons/menu2.png" className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)} alt="Menu" />
                     <ul ref={menuRef} className={`navigation-menu px-6 py-3  ${isMenuOpen ? 'show-menu' : ''}`}>
                         <a ref={linkRefs.hero} href="#hero" className={`${currentSection === "hero" && "highlight"}`}><li>Inicio</li></a>

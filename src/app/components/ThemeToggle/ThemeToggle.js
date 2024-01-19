@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const ThemeToggle = () => {
     const preferDarkMode = window?.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const [darkMode, setDarkMode] = useState( preferDarkMode || true);
+    const [darkMode, setDarkMode] = useState(preferDarkMode || true);
 
     useEffect(() => {
         if (darkMode) {

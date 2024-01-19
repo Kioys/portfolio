@@ -1,6 +1,6 @@
 
 'use client';
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Body from "./components/body/body";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
@@ -8,7 +8,7 @@ import Footer from "./components/footer/footer";
 export default function Home() {
   const [currentSection, setCurrentSection] = useState('');
   const [threshold, setThreshold] = useState(0.4);
-  
+
   const sectionRefs = {
     hero: useRef(null),
     about: useRef(null),
@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <div className="font-sans">
-      <Header currentSection={currentSection} linkRefs={linkRefs}/>
+      <Header currentSection={currentSection} linkRefs={linkRefs} />
       <Body sectionRefs={sectionRefs} />
       <Footer />
     </div>
