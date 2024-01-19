@@ -3,25 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --text-color: #333;  
-  --primary-color: #4394d1;  
-  --accent-color: #78cfc5;  
-  --background-color: #f0f0f0;  
-  --secondary-color: #b7c98e;  
-  --detail-color: #879663;  
-  --nav-menu-color: #94c062;  
+  --text-color: #333;
+  --primary-color: #4394d1;
+  --accent-color: #78cfc5;
+  --background-color: #f0f0f0;
+  --secondary-color: #b7c98e;
+  --detail-color: #879663;
+  --nav-menu-color: #94c062;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: #fff;  
-    --primary-color: #3891d1;  
-    --accent-color: #52a392;  
-    --background-color: #3d3c3b;  
-    --secondary-color: #5a6149;  
-    --detail-color: #d1e29a;
-    --nav-menu-color: #c7ff87;
-  }
+[data-theme="dark"] {
+  --text-color: #fff;
+  --primary-color: #3891d1;
+  --accent-color: #52a392;
+  --background-color: #3d3c3b;
+  --secondary-color: #5a6149;
+  --detail-color: #d1e29a;
+  --nav-menu-color: #c7ff87;
 }
 
 html {
@@ -33,7 +31,6 @@ body {
   background: var(--background-color);
 }
 
- 
 .bg-primary {
   background-color: var(--primary-color);
 }
@@ -54,7 +51,6 @@ body {
   background-color: var(--nav-menu-color);
 }
 
- 
 .txt-primary {
   color: var(--primary-color);
 }
@@ -74,4 +70,3 @@ body {
 .txt-nav-menu {
   color: var(--nav-menu-color);
 }
-

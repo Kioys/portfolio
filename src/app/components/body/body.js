@@ -77,7 +77,7 @@ export default function Home(props) {
 
 function HeroSection({ sectionRef }) {
     return (
-        <section ref={sectionRef} id="hero" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
+        <section ref={sectionRef} id="hero" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center xl:text-left">
             <div className="pfp-container flex flex-column justify-center lg:justify-start w-full lg:w-1/2">
                 <div className='flex flex-col items-center font-extrabold px-5 mb-10 text-2xl sm:text-5xl lg:pr-20'>
                     <img src="/images/pfp.jpeg" alt="Matias Arratibel" className="pfp" />
@@ -147,7 +147,7 @@ function AboutMeSection({ sectionRef }) {
 
 function ProjectsSection({ sectionRef }) {
     return (
-        <section ref={sectionRef} id="projects" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
+        <section ref={sectionRef} id="projects" className="section flex flex-col lg:flex-row items-center justify-center min-h-screen text-left">
             <div className="container mx-auto">
                 <h2 className="hidden-section-t text-4xl sm:text-6xl font-extrabold text-center txt-detail">Proyectos Destacados</h2>
                 <div className=" flex flex-col md:flex-row md:flex-wrap justify-center items-center pt-10">

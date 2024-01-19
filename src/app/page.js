@@ -1,32 +1,32 @@
 
 'use client';
-import React from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Body from "./components/body/body";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 
 export default function Home() {
-  const [currentSection, setCurrentSection] = React.useState('');
-  const [threshold, setThreshold] = React.useState(0.4);
+  const [currentSection, setCurrentSection] = useState('');
+  const [threshold, setThreshold] = useState(0.4);
   
   const sectionRefs = {
-    hero: React.useRef(null),
-    about: React.useRef(null),
-    projects: React.useRef(null),
-    skills: React.useRef(null),
-    experience: React.useRef(null),
-    education: React.useRef(null),
-    contact: React.useRef(null),
+    hero: useRef(null),
+    about: useRef(null),
+    projects: useRef(null),
+    skills: useRef(null),
+    experience: useRef(null),
+    education: useRef(null),
+    contact: useRef(null),
   };
 
   const linkRefs = {
-    hero: React.useRef(null),
-    about: React.useRef(null),
-    projects: React.useRef(null),
-    skills: React.useRef(null),
-    experience: React.useRef(null),
-    education: React.useRef(null),
-    contact: React.useRef(null),
+    hero: useRef(null),
+    about: useRef(null),
+    projects: useRef(null),
+    skills: useRef(null),
+    experience: useRef(null),
+    education: useRef(null),
+    contact: useRef(null),
   };
 
   const isMobile = () => window.innerWidth <= 768;
@@ -36,7 +36,7 @@ export default function Home() {
     setThreshold(newThreshold);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
 
     adjustThreshold();
     window.addEventListener('resize', adjustThreshold);
