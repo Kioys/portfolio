@@ -380,7 +380,6 @@ function ContactSection({ sectionRef }) {
                         </span>
                     </div>
                 )}
-
                 <form onSubmit={handleSubmit} className="space-y-8">
                     <div>
                         <label htmlFor="name" className="block mb-2 text-sm font-medium">Nombre</label>
