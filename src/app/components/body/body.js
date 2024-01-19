@@ -1,5 +1,5 @@
 // 'use client';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './body.css';
 
@@ -333,7 +333,9 @@ function EducationSection({ sectionRef }) {
 }
 
 function ContactSection({ sectionRef }) {
-    // TODO: Make the form work, it needs to send an email to my email address
+    const [isSent, setIsSent] = useState(false);
+    const [isError, setIsError] = useState(false);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -348,10 +350,10 @@ function ContactSection({ sectionRef }) {
         try {
             const response = await axios.post('/api/contact', data);
             console.log('Respuesta del servidor:', response);
-            // Aquí puedes manejar la respuesta, como mostrar un mensaje de éxito
+            setIsSent(true)
         } catch (error) {
             console.error('Hubo un error al enviar el mensaje:', error);
-            // Aquí puedes manejar el error, como mostrar un mensaje de error
+            setIsError(true)
         }
     };
 
@@ -359,7 +361,26 @@ function ContactSection({ sectionRef }) {
         <section ref={sectionRef} id="contact" className="flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="container auto px-10">
                 <p className="mb-4 text-4xl sm:text-6xl font-extrabold text-center txt-detail">Contactame</p>
-                <p className="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un correo directamente.</p>
+                <p className="mb-5 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un correo directamente.</p>
+                {isSent && !isError && (
+                    <div class="mb-5 lg:mb-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">¡Enviado!</strong>
+                        <span class="block sm:inline"> He recibido el mensaje con exito, gracias por contactarme.</span>
+                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={() => {setIsSent(false)}}>
+                            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" /></svg>
+                        </span>
+                    </div>
+                )}
+                {isError && (
+                    <div class="mb-5 lg:mb-5 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">¡Oops!</strong>
+                        <span class="block sm:inline"> Algo salió mal al intentar enviar el mensaje, disculpa las molestias.</span>
+                        <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={() => {setIsError(false)}}>
+                            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" /></svg>
+                        </span>
+                    </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-8">
                     <div>
                         <label htmlFor="name" className="block mb-2 text-sm font-medium">Nombre</label>
