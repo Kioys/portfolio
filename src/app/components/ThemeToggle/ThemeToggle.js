@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
 const ThemeToggle = () => {
-    const preferDarkMode = window?.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const [darkMode, setDarkMode] = useState(preferDarkMode || true);
+    const [darkMode, setDarkMode] = useState(false);
+    const [firstTime, setFirstTime] = useState(true);
 
     useEffect(() => {
-        if (darkMode) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-            document.documentElement.removeAttribute('data-theme');
+        if (firstTime) {
+            const preferDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setDarkMode(preferDarkMode);
+            setFirstTime(false);
         }
+        else {
+            if (darkMode) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        }
+
     }, [darkMode]);
 
     return (
