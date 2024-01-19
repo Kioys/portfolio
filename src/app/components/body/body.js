@@ -1,5 +1,6 @@
 // 'use client';
 import React, { useEffect } from 'react';
+import axios from 'axios';
 import './body.css';
 
 export default function Home(props) {
@@ -333,13 +334,37 @@ function EducationSection({ sectionRef }) {
 
 function ContactSection({ sectionRef }) {
     // TODO: Make the form work, it needs to send an email to my email address
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+        const data = {
+            email: form.email.value,
+            subject: form.subject.value,
+            name: form.name.value,
+            message: form.message.value,
+        };
+
+        try {
+            const response = await axios.post('/api/contact', data);
+            console.log('Respuesta del servidor:', response);
+            // Aquí puedes manejar la respuesta, como mostrar un mensaje de éxito
+        } catch (error) {
+            console.error('Hubo un error al enviar el mensaje:', error);
+            // Aquí puedes manejar el error, como mostrar un mensaje de error
+        }
+    };
 
     return (
         <section ref={sectionRef} id="contact" className="flex flex-col lg:flex-row items-center justify-center min-h-screen text-center lg:text-left">
             <div className="container auto px-10">
                 <p className="mb-4 text-4xl sm:text-6xl font-extrabold text-center txt-detail">Contactame</p>
                 <p className="mb-8 lg:mb-16 text-lg font-light text-centersm:text-xl">Si estás interesado en trabajar conmigo o quieres hablar sobre un proyecto, por favor, utiliza el formulario a continuación para enviarme un correo directamente.</p>
-                <form action="#" className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                    <div>
+                        <label htmlFor="name" className="block mb-2 text-sm font-medium">Nombre</label>
+                        <input type="text" id="name" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="Nombre Apellido" required />
+                    </div>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-sm font-medium">Tu email</label>
                         <input type="email" id="email" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm" placeholder="ejemplo@gmail.com" required />
