@@ -1,6 +1,6 @@
 # Portafolio Matías Arratibel
 
-Para ver este documento en otros lenguajes, vea:
+Para leer este documento en otros lenguajes, vea:
 
 - [English](../README.md)
 
