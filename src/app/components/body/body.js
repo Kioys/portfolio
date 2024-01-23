@@ -171,7 +171,7 @@ function ProjectsSection({ sectionRef }) {
                             <h3 className="text-3xl font-bold mb-1">Portafolio Matias Arratibel</h3>
                             <h4 className='text-md font-bold mb-3'>Proyecto Personal</h4>
                             <p className="text-lg mb-3">
-                                Desarrollo de mi portafolio profesional utilizando Next.js y Tailwind CSS para el frontend, con una implementación de Firebase en el backend para expandir funcionalidades de manera flexible y económica.
+                                Desarrollo de mi portafolio profesional utilizando Next.js con React.js y Tailwind CSS para el frontend.
                             </p>
                             <div className='flex flex-row justify-start'>
                                 <a href="https://matiasarratibel.web.app" target="_blank" rel="noopener noreferrer" className='mr-5'>
