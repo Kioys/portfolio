@@ -158,7 +158,7 @@ function ProjectsSection({ sectionRef }) {
                                 <h3 className="text-3xl font-bold mb-1">Atlas Dapp</h3>
                                 <h4 className='text-md font-bold mb-3'>The Galaxy Of Lemuria (TGOL)</h4>
                                 <p className="text-lg mb-3 overflow-y-scroll max-h-44 scrollable-text">
-                                    Contribución al desarrollo de una Dapp para TGOL de Lemuria Online, utilizando  de Lemuria Online, utilizando  de Lemuria Online, utilizando  de Lemuria Online, utilizando  de Lemuria Online, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
+                                    Contribución al desarrollo de una Dapp para TGOL de Lemuria Online, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
                                 </p>
                             </div>
                             <div>
