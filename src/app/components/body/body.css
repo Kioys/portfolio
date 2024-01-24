@@ -10,6 +10,25 @@
   border-radius: 50%;
 }
 
+.scrollable-text::-webkit-scrollbar-track {
+  background-color: transparent; /* Makes the track invisible */
+}
+
+/* Customize the scrollbar thumb */
+.scrollable-text::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.397);
+  border-radius: 10px;
+}
+
+.scrollable-text::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.scrollable-text {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: rgb(22, 22, 22) transparent; /* thumb and track color */
+}
+
 .hidden-section-l {
   opacity: 0;
   filter: blur(2px);

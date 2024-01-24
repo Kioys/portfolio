@@ -151,42 +151,50 @@ function ProjectsSection({ sectionRef }) {
             <div className="container mx-auto">
                 <h2 className="hidden-section-t text-4xl sm:text-6xl font-extrabold text-center txt-detail">Proyectos Destacados</h2>
                 <div className=" flex flex-col md:flex-row md:flex-wrap justify-center items-center pt-10">
-                    <div className="hidden-section-l w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div className="project-card bg-secondary p-6 rounded-lg shadow-lg">
-                            <h3 className="text-3xl font-bold mb-1">Atlas Dapp</h3>
-                            <h4 className='text-md font-bold mb-3'>The Galaxy Of Lemuria (TGOL)</h4>
-                            <p className="text-lg mb-3">
-                                Contribución al desarrollo de una Dapp para TGOL de Lemuria Online, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
-                            </p>
-                            <a href="https://www.tgol.io" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 transition duration-300">
-                                <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
-                                    Visitar sitio
-                                </button>
-                            </a>
 
-                        </div>
-                    </div>
-                    <div className="hidden-section-r w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div className="project-card bg-secondary p-6 rounded-lg shadow-lg">
-                            <h3 className="text-3xl font-bold mb-1">Portafolio Matias Arratibel</h3>
-                            <h4 className='text-md font-bold mb-3'>Proyecto Personal</h4>
-                            <p className="text-lg mb-3">
-                                Desarrollo de mi portafolio profesional utilizando Next.js con React.js y Tailwind CSS para el frontend.
-                            </p>
-                            <div className='flex flex-row justify-start'>
-                                <a href="https://matiasarratibel.web.app" target="_blank" rel="noopener noreferrer" className='mr-5'>
+                    <div className="hidden-section-l w-full xl:w-1/3 p-4 ">
+                        <div className="bg-secondary p-6 rounded-lg shadow-lg flex flex-col xl:max-h-96 xl:h-96 justify-between">
+                            <div>
+                                <h3 className="text-3xl font-bold mb-1">Atlas Dapp</h3>
+                                <h4 className='text-md font-bold mb-3'>The Galaxy Of Lemuria (TGOL)</h4>
+                                <p className="text-lg mb-3 overflow-y-scroll max-h-44 scrollable-text">
+                                    Contribución al desarrollo de una Dapp para TGOL de Lemuria Online, utilizando  de Lemuria Online, utilizando  de Lemuria Online, utilizando  de Lemuria Online, utilizando  de Lemuria Online, utilizando React, Ant Design y Ethereum para la gestión de blockchain. Por parte del backend con Node.js, Express, Parse Server y MongoDB, Pruebas Unitarias.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://www.tgol.io" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 transition duration-300">
                                     <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
-                                        Visitar sitio
-                                    </button>
-                                </a>
-                                <a href="https://github.com/Kioys/portfolio" target="_blank" rel="noopener noreferrer">
-                                    <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
-                                        Visitar repositorio
+                                        Web
                                     </button>
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <div className="hidden-section-r w-full xl:w-1/3 p-4 ">
+                        <div className="bg-secondary p-6 rounded-lg shadow-lg flex flex-col xl:max-h-96 xl:h-96 justify-between">
+                            <div>
+                                <h3 className="text-3xl font-bold mb-1">Portafolio</h3>
+                                <h4 className='text-md font-bold mb-3'>Proyecto Personal</h4>
+                                <p className="text-lg mb-3 flex-grow overflow-y-scroll max-h-44 scrollable-text">
+                                    Desarrollo de mi portafolio profesional utilizando Next.js con React.js y Tailwind CSS para el frontend.
+                                </p>
+                            </div>
+                            <div className='flex flex-row justify-start'>
+                                <a href="https://matiasarratibel.web.app" target="_blank" rel="noopener noreferrer" className='mr-5'>
+                                    <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
+                                        Web
+                                    </button>
+                                </a>
+                                <a href="https://github.com/Kioys/portfolio" target="_blank" rel="noopener noreferrer">
+                                    <button className="bg-primary text-white font-bold py-2 px-4 rounded-md">
+                                        Repositorio
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
